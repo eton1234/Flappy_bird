@@ -6,5 +6,6 @@ Model::Model(Game_config const& config)
 
 {
     Bird bird = Bird(config);
+//hello
     Column col = Column(config);
 }
