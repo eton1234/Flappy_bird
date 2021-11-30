@@ -4,11 +4,12 @@
 #include "bird.hxx"
 //constructor
 Bird::Bird(Game_config const& config)
-        : radius(config.ball_radius),
-          center(above_block(paddle, config)),
-          velocity(Velocity(config.ball_velocity_0)),
+        : radius(config.bird_radius),
+          center(0,0),
+          g(config.g),
           live(false)
-{ }
+{
+}
 
 Position
 Bird::top_left() const
@@ -38,6 +39,6 @@ Bird::hits_bottom(Game_config const& config) const
 
 //TODO
 bool
-bool hits_col(Game_config const&) const {
+hits_col(Game_config const&) const {
 
 }

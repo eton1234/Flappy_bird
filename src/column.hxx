@@ -13,11 +13,10 @@ struct Column
 
     Column(Game_config const&);
 
-    Column next(double dt) const;
+    Column next(double dt);
 
-    Velocity velocity;
-    Position position;
-    //ge211::Random_source<int> rand_top_height;
+    int velocity;
+    ge211::Random_source<int> rand_top_height;
     Rect bot_col;
     Rect top_col;
     //gap lower & upper bound (y1,y2)

@@ -19,4 +19,6 @@ class Model
     //Col col;
    // std::vector<Col> cols;
    // Game_config const config;
+
+
 };

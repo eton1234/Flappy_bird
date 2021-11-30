@@ -7,11 +7,12 @@
 Game_config::Game_config()
         : scene_dims {1024, 768},
           col_width {20},
+          gap_size{40},
           col_margin {screen_dims.height/6},
           col_spacing {20},
           col_v {20},
           bird_radius {10},
-          g {0, -9.8},
+          g {-9.8},
           lives {3},
           extra_life {10}
 { }
