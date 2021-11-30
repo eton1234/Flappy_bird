@@ -4,7 +4,6 @@
 #include "game_config.hxx"
 
 
-
 class Model
 {
 
