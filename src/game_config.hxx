@@ -15,17 +15,24 @@ struct Game_config
     ge211::Dims<int> scene_dims;
 
     // The width of the columns:
-    int col_width;
+    const int col_width;
 
-    // The number of pixels of space between each column
+    // The size of the gap between the top rectangle and bottom rectangle
+    int gap_size;
+
+    // The number of pixels of space between each column horizontally
     int col_spacing;
-    float col_v;
+
+    // The speed columns move (this is treated as a positive value)
+    int col_v;
+
+    // The bounds a column has. How high/low the column can be placed
     int col_margin;
     // The radius of the bird:
     int bird_radius;
 
     // The ball's initial gravity {height}:
-    ge211::Dims<int> g;
+    int g;
 
     // The amount of lives a bird has
     int lives;

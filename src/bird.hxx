@@ -16,6 +16,7 @@ struct Bird {
     int radius;
     Position center;
     Velocity velocity;
+    int g;
 
     /// Whether the ball is moving freely (true) or stuck to the top of
     /// the paddle (false).
@@ -30,4 +31,5 @@ struct Bird {
     bool hits_bottom(Game_config const&) const;
     //custom functions
     bool hits_col(Column col, Game_config const&) const;
+
 };

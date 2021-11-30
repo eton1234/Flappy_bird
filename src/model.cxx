@@ -2,10 +2,13 @@
 #include "bird.hxx"
 #include "column.hxx"
 
-Model::Model(Game_config const& config)
-
-{
+Model::Model(Game_config const& config) {
     Bird bird = Bird(config);
-//hello
+
     Column col = Column(config);
+
+}
+void
+Model::on_frame(double dt) {
+
 }
