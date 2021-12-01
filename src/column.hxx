@@ -16,7 +16,8 @@ struct Column
     Column next(double dt);
 
     int velocity;
-    ge211::Random_source<int> rand_top_height;
+    //ge211::Random_source<int> rand_top_height;
+    int top_col_h;
     Rect bot_col;
     Rect top_col;
     //gap lower & upper bound (y1,y2)

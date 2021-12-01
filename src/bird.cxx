@@ -39,6 +39,6 @@ Bird::hits_bottom(Game_config const& config) const
 
 //TODO
 bool
-hits_col(Game_config const&) const {
-
+Bird::hits_col(Column col, Game_config const& config) const {
+    return true;
 }
