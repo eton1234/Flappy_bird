@@ -23,6 +23,6 @@ Column::Column(Game_config const& config)
         result.bot_col.x -= velocity*dt;
 
         return result;
-}
+    }
 
 
