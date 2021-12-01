@@ -2,9 +2,11 @@
 
 #include <ge211.hxx>
 #include "game_config.hxx"
+#include "column.hxx"
+#include "bird.hxx"
 
 
-class Model
+struct Model
 {
 
 
@@ -14,10 +16,10 @@ class Model
     //void launch();
     void on_frame(double dt);
     //TODO variables
-    //Bird bird;
+    Bird bird;
     //Col col;
-   // std::vector<Col> cols;
-   // Game_config const config;
+    std::vector<Column> cols;
+    Game_config const config;
 
 
 };

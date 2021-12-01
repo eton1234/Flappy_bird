@@ -25,20 +25,16 @@ Bird::next(double dt) const
     return result;
 }
 bool
-Bird::hits_top(Game_config const&) const
+Bird::hits(Game_config const& config) const
 {
-    return (center.y - radius < 0);
-}
-//hits bottom when > than screen_dim.height
-bool
-Bird::hits_bottom(Game_config const& config) const
-{
-    return (config.scene_dims.height < center.y + radius);
+    return ((center.y - radius < 0) or (center.y + radius > config.scene_dims.height));
 }
 
 
 //TODO
 bool
 Bird::hits_col(Column col, Game_config const& config) const {
+
+
     return true;
 }

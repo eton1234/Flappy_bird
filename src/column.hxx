@@ -11,7 +11,7 @@ using Rect = ge211::Rect<int>;
 struct Column
 {
 
-    Column(Game_config const&);
+    Column(int x, Game_config const&);
 
     Column next(double dt);
 
@@ -21,5 +21,10 @@ struct Column
     Rect bot_col;
     Rect top_col;
     //gap lower & upper bound (y1,y2)
+
+    // Tag that keeps track of if the column has made it passed the bird
+    bool cleared;
+
+    bool the_end_is_here();
 };
 

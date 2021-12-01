@@ -27,8 +27,8 @@ struct Bird {
     Bird next(double dt) const;
 
     //functions
-    bool hits_top(Game_config const&) const;
-    bool hits_bottom(Game_config const&) const;
+    bool hits(Game_config const& config) const;
+
     //custom functions
     bool hits_col(Column col, Game_config const&) const;
 

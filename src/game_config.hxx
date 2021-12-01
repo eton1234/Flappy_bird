@@ -17,6 +17,9 @@ struct Game_config
     // The width of the columns:
     const int col_width;
 
+    // The number of random columns generated
+    const int col_nums;
+
     // The size of the gap between the top rectangle and bottom rectangle
     int gap_size;
 

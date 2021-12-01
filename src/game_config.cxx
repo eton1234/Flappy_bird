@@ -14,7 +14,8 @@ Game_config::Game_config()
           bird_radius {10},
           g {-9.8},
           lives {3},
-          extra_life {10}
+          extra_life {10},
+          col_nums {ceil(scene_dims.width/(col_width + col_spacing))}
 { }
 
 ge211::Posn<int>
