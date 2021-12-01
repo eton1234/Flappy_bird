@@ -22,10 +22,10 @@ Model::on_frame(double dt) {
     int special_index = 0;
     for (int i = 0; i < cols.size(); i++) {
         bool found = false;
-        next_cols.push_back(cols[i].next(dt));
+        next_cols.push_back(cols.at(i).next(dt));
 
         if(not found) {
-            if(not cols[i].cleared) {
+            if(not cols.at(i).cleared) {
                 found = true;
                 special_index = i;
             }
@@ -41,9 +41,22 @@ Model::on_frame(double dt) {
             bird.live = false;
             Bird new_bird = Bird(config);
             bird = new_bird;
+            return;
 
-        } if (next.hits_col(next_cols[special_index], config)) {
+        } if (next.hits_col(next_cols.at(special_index), config)) {
             bird.live = false;
+            bird.g = 0;
+            for (int i = 0; i < cols.size(); i++) {
+                cols.at(i).velocity = 0;
+            }
+            return;
+        } if (next_cols.at(special_index).column_survived(config)) {
+            next_cols.at(special_index).cleared = true;
         }
+
+        bird = next;
+        cols = next_cols;
+
+
     }
 }

@@ -11,7 +11,7 @@ Column::Column(int x, Game_config const& config)
         bot_col = Rect(x, top_col.height + config.gap_size, config.col_width,
                        config.scene_dims.height - (top_col.height + config.gap_size));
 
-    }
+     }
 
 
 
@@ -22,10 +22,10 @@ Column::Column(int x, Game_config const& config)
         result.bot_col.x -= velocity*dt;
 
         return result;
-    }
+}
 
-    bool
-    Column::the_end_is_here() {
+bool
+Column::the_end_is_here() {
     if(top_col.x <= 0) {
         return true;
     }
@@ -33,5 +33,15 @@ Column::Column(int x, Game_config const& config)
         return false;
     }
 }
+
+bool
+Column::column_survived(const Game_config &config) {
+    if(top_col.x < config.bird_top_left_0().x) {
+        return true;
+    }
+    return false;
+}
+
+
 
 
