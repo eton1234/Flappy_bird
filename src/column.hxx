@@ -11,7 +11,7 @@ using Rect = ge211::Rect<int>;
 struct Column
 {
 
-    Column(int x, Game_config const&);
+    Column(Game_config const&);
 
     Column next(double dt);
 

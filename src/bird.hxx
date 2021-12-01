@@ -18,9 +18,12 @@ struct Bird {
     Velocity velocity;
     int g;
 
-    /// Whether the ball is moving freely (true) or stuck to the top of
-    /// the paddle (false).
+    /// Whether the bird is moving freely (true) or dead
     bool live;
+
+    // Number of lives remaining
+    int lives;
+
     //for the graphics
     Position top_left() const;
 

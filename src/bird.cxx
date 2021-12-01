@@ -7,7 +7,8 @@ Bird::Bird(Game_config const& config)
         : radius(config.bird_radius),
           center(0,0),
           g(config.g),
-          live(false)
+          live(false),
+          lives(config.lives)
 {
 }
 

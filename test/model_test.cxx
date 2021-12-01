@@ -19,6 +19,11 @@ TEST_CASE("example test (TODO: replace this)")
     expected += .5 * m.bird.velocity;
 
     CHECK(m.bird.center == expected);
+    CHECK(m.bird.lives == 3);
+
+    Column col = Column(config);
+
+
 
 
 }
