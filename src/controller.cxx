@@ -1,10 +1,10 @@
 
 #include "controller.hxx"
-#include "game_config.hxx"
-Controller::Controller()
-        :
+#include "model.hxx"
+Controller::Controller(Model& model)
+        :model_(model),
          config(Game_config()),
-         view_( View(model_))
+         view_(model)
 {}
 void
 Controller::on_key(ge211::Key key)

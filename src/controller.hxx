@@ -1,14 +1,14 @@
 #pragma once
 
-#include "model.hxx"
-#include "view.hxx"
 
+#include "view.hxx"
+#include "game_config.hxx"
 #include <ge211.hxx>
 
 class Controller : public ge211::Abstract_game
 {
 public:
-    Controller();
+    Controller(Model&);
 
 
 protected:
@@ -18,7 +18,7 @@ protected:
     void draw(ge211::Sprite_set& set) override;
 
 private:
+    Model& model_;
     Game_config const config;
-    Model model_;
     View view_;
 };

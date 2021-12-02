@@ -6,7 +6,7 @@
 class View
 {
 public:
-    explicit View(Model const& model);
+    explicit View(Model const&);
 
     void draw(ge211::Sprite_set& set);
     ge211::Dims<int> initial_window_dimensions() const;
