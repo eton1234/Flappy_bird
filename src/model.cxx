@@ -6,7 +6,7 @@ Model::Model(Game_config const& config) :
     bird(config),
     config(config)
 {
-
+    //one new column added to cols vec
     Column new_col = Column(config);
     cols.push_back(new_col);
 
@@ -18,7 +18,7 @@ Model::Model(Game_config const& config) :
 void
 Model::on_frame(double dt) {
 
-    // Calculates the next positions of all the Columns
+    // Calculates the next positions of all the Columns & stores them in next cols vec
     std::vector<Column> next_cols;
     int special_index = 0;
     bool found = false;
@@ -51,13 +51,14 @@ Model::on_frame(double dt) {
 
 
         if(next.hits(config)) {
-            bird.live = false;
+            printf("oof \n");
             Bird new_bird = Bird(config);
             new_bird.lives = bird.lives --;
             bird = new_bird;
-            bird.lives --;
+            for (size_t i = 0; i < cols.size(); i++) {
+                cols.at(i).velocity = 0;
+            }
             return;
-
         } if (next.hits_col(next_cols.at(special_index), config)) {
             printf("Stop it \n");
             Bird new_bird = Bird(config);
@@ -67,13 +68,17 @@ Model::on_frame(double dt) {
                 cols.at(i).velocity = 0;
             }
             return;
-        } if (next_cols.at(special_index).column_survived(config)) {
+        // checks if column has moved past the bird.
+        }
+        printf("width: %d \n", next_cols.at(special_index).top_col.x+config.col_width);
+        printf("bird position: %d \n", bird.top_left().x);
+        printf("\n it's: %d \n", config.scene_dims.width);
+        if (bird.live and next_cols.at(special_index).top_col.x+config.col_width < bird.top_left().x) {
+            printf("%d \n", special_index);
             next_cols.at(special_index).cleared = true;
         }
-
+        printf("none of the above \n");
         bird = next;
         cols = next_cols;
-
-
     }
 }

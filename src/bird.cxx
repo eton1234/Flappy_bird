@@ -23,7 +23,8 @@ Bird
 Bird::next(double dt) const
 {
     Bird result(*this);
-    result.center.y += result.velocity.height*dt - g*dt*dt;
+    result.velocity.height += g*dt;
+    result.center.y += result.velocity.height*dt;
     return result;
 }
 bool
