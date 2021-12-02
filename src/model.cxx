@@ -71,7 +71,7 @@ Model::on_frame(double dt) {
         // checks if column has moved past the bird.
         }
         printf("width: %d \n", next_cols.at(special_index).top_col.x+config.col_width);
-        printf("bird position: %d \n", bird.top_left().x);
+        //printf("bird position: %d \n", bird.top_left().x);
         printf("\n it's: %d \n", config.scene_dims.width);
         if (bird.live and next_cols.at(special_index).top_col.x+config.col_width < bird.top_left().x) {
             printf("%d \n", special_index);

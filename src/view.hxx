@@ -13,5 +13,5 @@ public:
 private:
     Model const& model_;
     ge211::Circle_sprite const bird_sprite;
-    ge211::Rectangle_sprite const col_sprite;
+   // ge211::Rectangle_sprite const col_rect;
 };
