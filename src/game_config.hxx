@@ -15,17 +15,17 @@ struct Game_config
     ge211::Dims<int> scene_dims;
 
     // The width of the columns:
-    const int col_width;
+    const float col_width;
 
 
     // The size of the gap between the top rectangle and bottom rectangle
-    int gap_size;
+    float gap_size;
 
     // The number of pixels of space between each column horizontally
     const int col_spacing;
 
     // The speed columns move (this is treated as a positive value)
-    int col_v;
+    double col_v;
 
     // The bounds a column has. How high/low the column can be placed
     int col_margin;

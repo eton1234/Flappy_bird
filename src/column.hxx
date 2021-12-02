@@ -5,9 +5,9 @@
 #pragma once
 #include <ge211.hxx>
 #include "game_config.hxx"
-using Position = ge211::Posn<int>;
+using Position = ge211::Posn<float>;
 using Velocity = ge211::Dims<float>;
-using Rect = ge211::Rect<int>;
+using Rect = ge211::Rect<float>;
 struct Column
 {
 
@@ -15,9 +15,9 @@ struct Column
 
     Column next(double dt);
 
-    int velocity;
+    Velocity velocity;
     //ge211::Random_source<int> rand_top_height;
-    int top_col_h;
+    float top_col_h;
     Rect bot_col;
     Rect top_col;
     //gap lower & upper bound (y1,y2)

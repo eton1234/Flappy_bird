@@ -7,7 +7,7 @@
 #include <ge211.hxx>
 #include "column.hxx"
 
-using Position = ge211::Posn<int>;
+using Position = ge211::Posn<float>;
 
 using Velocity = ge211::Dims<float>;
 
@@ -16,7 +16,7 @@ struct Bird {
     int radius;
     Position center;
     Velocity velocity;
-    int g;
+    float g;
 
     /// Whether the bird is moving freely (true) or dead
     bool live;
