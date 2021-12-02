@@ -33,7 +33,7 @@ Column::the_end_is_here() {
 
 bool
 Column::column_survived(const Game_config &config) {
-    if(top_col.x < config.bird_top_left_0().x) {
+    if(top_col.x+config.col_width < config.bird_top_left_0().x) {
         return true;
     }
     return false;
