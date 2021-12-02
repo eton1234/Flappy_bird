@@ -11,14 +11,11 @@ Column::Column(Game_config const& config)
                        config.scene_dims.height - (top_col.height + config.gap_size));
     }
 
-
-
     Column
     Column::next(double dt) {
         Column result (*this);
         result.top_col.x -= velocity*dt;
         result.bot_col.x -= velocity*dt;
-
         return result;
 }
 
