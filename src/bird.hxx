@@ -16,7 +16,7 @@ struct Bird {
     int radius;
     Position center;
     Velocity velocity;
-    int g;
+    float g;
 
     /// Whether the bird is moving freely (true) or dead
     bool live;

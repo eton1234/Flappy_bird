@@ -2,7 +2,7 @@
 #include "column.hxx"
 //constructor
 Column::Column(Game_config const& config)
-    : velocity{config.col_v},
+    : velocity{Velocity (config.col_v, 0)},
     cleared{false}
      {
         ge211::Random_source<int> rand(config.col_margin, config.scene_dims.height-config.col_margin-config.gap_size);
@@ -13,11 +13,14 @@ Column::Column(Game_config const& config)
 
      }
 
+
+
     Column
     Column::next(double dt) {
         Column result (*this);
-        result.top_col.x -= velocity*dt;
-        result.bot_col.x -= velocity*dt;
+        result.top_col.x = result.top_col.x - velocity.width*dt;
+        result.bot_col.x -= velocity.width*dt;
+
         return result;
 }
 
@@ -33,9 +36,9 @@ Column::the_end_is_here() {
 
 bool
 Column::column_survived(const Game_config &config) {
-    if(top_col.x+config.col_width < config.bird_top_left_0().x) {
+    /*if(top_col.x+config.col_width < config.bird_top_left_0().x) {
         return true;
-    }
+    }*/
     return false;
 }
 

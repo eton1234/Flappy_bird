@@ -5,18 +5,22 @@
 //constructor
 Bird::Bird(Game_config const& config)
         : radius(config.bird_radius),
-          center(int(config.scene_dims.width)/2,int(config.scene_dims.height)/2),
+          center{ge211::Posn<int>{config.scene_dims.width/2, config.scene_dims.height/2}},
           velocity(0,0),
           g(config.g),
           live(false),
           lives(config.lives)
 {
+    center.x = config.scene_dims.width/2;
+    center.y = config.scene_dims.height/2;
 }
+
 
 Position
 Bird::top_left() const
 {
-    return {center.x - radius, center.y - radius};
+    Position result = Position(center.x - radius, center.y - radius);
+    return result;
 }
 
 Bird
@@ -34,7 +38,7 @@ Bird::hits(Game_config const& config) const
 }
 
 
-//TODO
+
 bool
 Bird::hits_col(Column col, Game_config const& config) const {
 
