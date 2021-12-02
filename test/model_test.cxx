@@ -76,3 +76,29 @@ TEST_CASE("testing columns position") {
     m.on_frame(3);
     CHECK(m.cols.at(0).cleared);
 }
+
+TEST_CASE("testing columns generation") {
+    Model m = Model(config);
+    m.bird.live = true;
+    m.on_frame(3);
+
+    printf("here we go again: %f\n", m.cols.at(0).top_col.x);
+    CHECK(m.cols.size() == 2);
+
+    m.on_frame(3);
+    CHECK(m.cols.size() == 3);
+
+    printf("Col 1: %f\n", m.cols.at(0).top_col.x);
+    printf("Col 2: %f\n", m.cols.at(1).top_col.x);
+    printf("Col 3: %f\n", m.cols.at(2).top_col.x);
+    m.on_frame(3);
+
+
+    for (size_t i = 0; i < m.config.col_nums; i++) {
+        m.on_frame(3);
+        printf("Column size: %d\n", m.cols.size());
+    }
+
+    CHECK(m.cols.size() == m.config.col_nums);
+
+}

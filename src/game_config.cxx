@@ -16,7 +16,12 @@ Game_config::Game_config()
           g {-9},
           lives {3},
           extra_life {10}
-{ }
+{
+    printf("math stuff 1: %f\n", scene_dims.width / (col_width + col_spacing));
+    printf("math stuff 2: %f\n", float(scene_dims.width) / 60);
+    printf("Column nums: %d\n\n", col_nums);
+
+}
 
 ge211::Posn<int>
 Game_config::bird_top_left_0() const
