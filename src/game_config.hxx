@@ -17,11 +17,12 @@ struct Game_config
     // The width of the columns:
     const int col_width;
 
+
     // The size of the gap between the top rectangle and bottom rectangle
     int gap_size;
 
     // The number of pixels of space between each column horizontally
-    int col_spacing;
+    const int col_spacing;
 
     // The speed columns move (this is treated as a positive value)
     int col_v;
@@ -30,6 +31,9 @@ struct Game_config
     int col_margin;
     // The radius of the bird:
     int bird_radius;
+
+    // The number of random columns generated
+    const int col_nums;
 
     // The ball's initial gravity {height}:
     int g;

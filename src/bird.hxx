@@ -18,17 +18,20 @@ struct Bird {
     Velocity velocity;
     int g;
 
-    /// Whether the ball is moving freely (true) or stuck to the top of
-    /// the paddle (false).
+    /// Whether the bird is moving freely (true) or dead
     bool live;
+
+    // Number of lives remaining
+    int lives;
+
     //for the graphics
     Position top_left() const;
 
     Bird next(double dt) const;
 
     //functions
-    bool hits_top(Game_config const&) const;
-    bool hits_bottom(Game_config const&) const;
+    bool hits(Game_config const& config) const;
+
     //custom functions
     bool hits_col(Column col, Game_config const&) const;
 

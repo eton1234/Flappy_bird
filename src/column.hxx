@@ -21,5 +21,14 @@ struct Column
     Rect bot_col;
     Rect top_col;
     //gap lower & upper bound (y1,y2)
+
+    // Tag that keeps track of if the column has made it passed the bird
+    bool cleared;
+
+    // Checks if a column has reached the right most edge of the scene
+    bool the_end_is_here();
+
+    // Checks if a column has proceeded past a bird
+    bool column_survived(Game_config const& config);
 };
 
