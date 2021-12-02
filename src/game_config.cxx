@@ -21,8 +21,8 @@ Game_config::Game_config()
 ge211::Posn<int>
 Game_config::bird_top_left_0() const
 {
-    ge211::Posn<int> result(scene_dims);
-    result.x /= 2;
-    result.y /= 2;
+    ge211::Posn<int> result(scene_dims/2);
+    result.x = result.x;
+    result.y = result.y;
     return result;
 }

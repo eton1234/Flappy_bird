@@ -3,8 +3,8 @@
 #include "column.hxx"
 
 Model::Model(Game_config const& config) :
-    bird(config),
-    config(config)
+    bird{config},
+    config{config}
 {
     //one new column added to cols vec
     Column new_col = Column(config);
@@ -25,7 +25,7 @@ Model::on_frame(double dt) {
     for (size_t i = 0; i < cols.size(); i++) {
 
         next_cols.push_back(cols.at(i).next(dt));
-
+        printf("next_cols: %d \n", next_cols.at(i).top_col.x);
         // Finds the first column that has not been cleared by the bird
         if(not found) {
             if(not cols.at(i).cleared) {
@@ -70,9 +70,6 @@ Model::on_frame(double dt) {
             return;
         // checks if column has moved past the bird.
         }
-        printf("width: %d \n", next_cols.at(special_index).top_col.x+config.col_width);
-        printf("bird position: %d \n", bird.top_left().x);
-        printf("\n it's: %d \n", config.scene_dims.width);
         if (bird.live and next_cols.at(special_index).top_col.x+config.col_width < bird.top_left().x) {
             printf("%d \n", special_index);
             next_cols.at(special_index).cleared = true;
@@ -80,5 +77,6 @@ Model::on_frame(double dt) {
         printf("none of the above \n");
         bird = next;
         cols = next_cols;
+        printf("cols actual: %d \n", cols.at(0).top_col.x);
     }
 }

@@ -16,7 +16,7 @@ TEST_CASE("example test (TODO: replace this)")
     Position expected = m.bird.center;
 
     m.on_frame(.5);
-    expected += .5 * m.bird.velocity;
+    expected.y += .5 * m.bird.velocity.height;
 
     CHECK(m.bird.center == expected);
     CHECK(m.bird.lives == 3);
@@ -40,7 +40,7 @@ TEST_CASE("testing columns") {
     Position expected = m.bird.center;
 
     m.on_frame(.5);
-    expected += .5 * m.bird.velocity;
+    expected.y += .5 * m.bird.velocity.height;
 
     int expected_col = config.scene_dims.width;
     expected_col -= .5 * m.config.col_v;
@@ -50,6 +50,13 @@ TEST_CASE("testing columns") {
     //1024, 768
     //512, 384
 
+
+}
+TEST_CASE("testing columns position") {
+    Model m = Model(config);
+    Column col = Column(config);
+
+    int expected_col = config.scene_dims.width;
     m.cols.clear();
     m.cols.push_back(col);
     expected_col = config.scene_dims.width;
@@ -60,15 +67,11 @@ TEST_CASE("testing columns") {
 
     expected_col -= 25 * m.config.col_v;
 
+    printf("the bird is at: %d \n", m.bird.center.x);
+
     CHECK(m.cols.at(0).top_col.x == expected_col);
     CHECK(not m.cols.at(0).cleared);
 
     m.on_frame(1);
     CHECK(m.cols.at(0).cleared);
-
-
-
-
-
-
 }

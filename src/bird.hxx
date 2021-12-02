@@ -7,7 +7,7 @@
 #include <ge211.hxx>
 #include "column.hxx"
 
-using Position = ge211::Posn<float>;
+using Position = ge211::Posn<int>;
 
 using Velocity = ge211::Dims<float>;
 
