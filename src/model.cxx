@@ -3,8 +3,8 @@
 #include "column.hxx"
 
 Model::Model(Game_config const& config) :
-    config(config),
-    bird(config)
+    bird(config),
+    config(config)
 {
 
     Column new_col = Column(config);
@@ -21,8 +21,9 @@ Model::on_frame(double dt) {
     // Calculates the next positions of all the Columns
     std::vector<Column> next_cols;
     int special_index = 0;
-    for (int i = 0; i < cols.size(); i++) {
-        bool found = false;
+    bool found = false;
+    for (size_t i = 0; i < cols.size(); i++) {
+
         next_cols.push_back(cols.at(i).next(dt));
 
         // Finds the first column that has not been cleared by the bird
@@ -52,17 +53,19 @@ Model::on_frame(double dt) {
         if(next.hits(config)) {
             bird.live = false;
             Bird new_bird = Bird(config);
+            new_bird.lives = bird.lives --;
             bird = new_bird;
             bird.lives --;
             return;
 
         } if (next.hits_col(next_cols.at(special_index), config)) {
-            bird.live = false;
-            bird.g = 0;
-            for (int i = 0; i < cols.size(); i++) {
+            printf("Stop it \n");
+            Bird new_bird = Bird(config);
+            new_bird.lives = bird.lives --;
+            bird = new_bird;
+            for (size_t i = 0; i < cols.size(); i++) {
                 cols.at(i).velocity = 0;
             }
-            bird.lives --;
             return;
         } if (next_cols.at(special_index).column_survived(config)) {
             next_cols.at(special_index).cleared = true;
