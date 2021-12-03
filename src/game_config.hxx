@@ -31,6 +31,7 @@ struct Game_config
     int col_margin;
     // The radius of the bird:
     int bird_radius;
+    int jump_v;
 
     // The number of random columns generated
     const int col_nums;

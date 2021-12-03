@@ -35,6 +35,8 @@ Model::on_frame(double dt) {
         }
     }
     // Checks to see if the last Column in the vector is far enough away from the right border to add a new one
+
+    //TODO theoretically you can be pushing more than desired aount of columns
     if(next_cols.at(next_cols.size()-1).top_col.x <= config.scene_dims.width-config.col_spacing-config.col_spacing) {
         Column new_col = Column(config);
         next_cols.push_back(new_col);
@@ -76,3 +78,8 @@ Model::on_frame(double dt) {
     } else {
     }
 }
+
+void Model::jump() {
+    bird.velocity.height = config.jump_v;
+}
+

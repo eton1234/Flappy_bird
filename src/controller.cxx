@@ -10,7 +10,7 @@ void
 Controller::on_key(ge211::Key key)
 {
     if (key == ge211::Key::code(' ')) {
-        //model_.jump();
+        model_.jump();
     } else if (key == ge211::Key::code('q')) {
         //model.launch();
     }

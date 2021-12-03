@@ -15,6 +15,7 @@ struct Model
     //void restart();
     //void launch();
     void on_frame(double dt);
+    void jump();
     //TODO variables
     Bird bird;
     //Col col;

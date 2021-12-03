@@ -29,10 +29,10 @@ Bird
 Bird::next(double dt) const
 {
     Bird result(*this);
-    /*
+
     result.velocity.height += g*dt;
     result.center.y += result.velocity.height*dt;
-     */
+
     return result;
 }
 bool
@@ -53,3 +53,4 @@ Bird::hits_col(Column col, Game_config const& config) const {
     }
     return false;
 }
+

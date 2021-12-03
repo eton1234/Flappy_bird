@@ -10,10 +10,11 @@ Game_config::Game_config()
           gap_size{100 },
           col_spacing {scene_dims.width/3},
           col_v {60},
-          col_margin {scene_dims.height/6},
+          col_margin {scene_dims.height/30},
           bird_radius {10},
+          jump_v {-300},
           col_nums {int(ceil(scene_dims.width / (col_width + col_spacing)))},
-          g {-9},
+          g {2000},
           lives {3},
           extra_life {10}
 {
