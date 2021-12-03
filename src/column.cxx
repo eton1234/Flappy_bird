@@ -10,7 +10,6 @@ Column::Column(Game_config const& config)
         top_col = Rect(config.scene_dims.width, 0, config.col_width, top_col_h);
         bot_col = Rect(config.scene_dims.width, top_col.height + config.gap_size, config.col_width,
                        config.scene_dims.height - (top_col.height + config.gap_size));
-
      }
 
 

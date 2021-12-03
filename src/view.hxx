@@ -13,5 +13,12 @@ public:
 private:
     Model const& model_;
     ge211::Circle_sprite const bird_sprite;
-   // ge211::Rectangle_sprite const col_rect;
+    ge211::Rectangle_sprite top_1;
+    ge211::Rectangle_sprite bot_1;
+    ge211::Rectangle_sprite top_2;
+    ge211::Rectangle_sprite bot_2;
+    ge211::Rectangle_sprite top_3;
+    ge211::Rectangle_sprite bot_3;
+    std::vector<ge211::Rectangle_sprite> top_sprites;
+    std::vector<ge211::Rectangle_sprite> bot_sprites;
 };

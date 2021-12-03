@@ -8,7 +8,7 @@
 class Controller : public ge211::Abstract_game
 {
 public:
-    Controller(Model&);
+    explicit Controller(Model&);
 
 
 protected:

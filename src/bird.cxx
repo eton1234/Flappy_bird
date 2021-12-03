@@ -8,7 +8,9 @@ Bird::Bird(Game_config const& config)
           center{ge211::Posn<int>{config.scene_dims.width/2, config.scene_dims.height/2}},
           velocity(0,0),
           g(config.g),
-          live(false),
+          //TODO remember to set this to false when launch function  is
+          // programmed
+          live(true),
           lives(config.lives)
 {
     center.x = config.scene_dims.width/2;
@@ -27,8 +29,10 @@ Bird
 Bird::next(double dt) const
 {
     Bird result(*this);
+    /*
     result.velocity.height += g*dt;
     result.center.y += result.velocity.height*dt;
+     */
     return result;
 }
 bool

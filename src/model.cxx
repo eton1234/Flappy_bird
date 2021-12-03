@@ -74,6 +74,5 @@ Model::on_frame(double dt) {
         bird = next;
         cols = next_cols;
     } else {
-
     }
 }

@@ -5,6 +5,7 @@
 #pragma once
 #include <ge211.hxx>
 #include "game_config.hxx"
+
 using Position = ge211::Posn<float>;
 using Velocity = ge211::Dims<float>;
 using Rect = ge211::Rect<float>;
