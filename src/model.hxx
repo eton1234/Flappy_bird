@@ -16,11 +16,12 @@ struct Model
     //void launch();
     void on_frame(double dt);
     void jump();
+
     //TODO variables
     Bird bird;
     //Col col;
     std::vector<Column> cols;
     Game_config const config;
-
+    size_t score;
 
 };
