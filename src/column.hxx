@@ -11,23 +11,18 @@ using Velocity = ge211::Dims<float>;
 using Rect = ge211::Rect<float>;
 struct Column
 {
-
+    //Constructors
     Column(Game_config const&);
-
-    Column next(double dt);
-
+    Column(Game_config const& config, int x_pos);
+    //variables
     Velocity velocity;
-    //ge211::Random_source<int> rand_top_height;
-    float top_col_h;
-    Rect bot_col;
+    float top_col_h; //top col height: note 0,0 is the top left of the screen
     Rect top_col;
-    //gap lower & upper bound (y1,y2)
-
-    // Tag that keeps track of if the column has made it passed the bird
-    bool cleared;
-
-    // Checks if a column has reached the right most edge of the scene
-    bool the_end_is_here();
+    Rect bot_col;
+    bool cleared; //if the col has made it past the ird
+    //if you want to change the color of the best score column
+    ge211::Color color;
+    Column next(double dt);
 
     // Checks if a column has proceeded past a bird
     bool column_survived(Game_config const& config);
